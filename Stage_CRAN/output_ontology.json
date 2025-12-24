@@ -1,0 +1,1261 @@
+{
+  "context": {
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.jsonld",
+      "https://schema.lab.fiware.org/ld/context",
+      {
+        "Cobot": "https://www.ai4c2ps.eu/ontologies/2024/core#Cobot",
+        "Hand-E": "https://www.ai4c2ps.eu/ontologies/2024/core#Hand-E",
+        "Ability": "https://www.ai4c2ps.eu/ontologies/2024/SysAgentOnto#Ability",
+        "Operator": "https://www.ai4c2ps.eu/ontologies/2024/core#Operator",
+        "Screw": "https://www.ai4c2ps.eu/ontologies/2024/core#Screw",
+        "Screwdriver": "https://www.ai4c2ps.eu/ontologies/2024/core#Screwdriver",
+        "Screwer": "https://www.ai4c2ps.eu/ontologies/2024/core#Screwer",
+        "ExecutionStateRegion": "http://www.ease-crc.org/ont/SOMA.owl#ExecutionStateRegion",
+        "PhysicalObject": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject",
+        "Patient": "http://www.ease-crc.org/ont/SOMA.owl#Patient",
+        "Grasper": "https://www.ai4c2ps.eu/ontologies/2024/core#Grasper",
+        "Affordance": "http://www.ease-crc.org/ont/SOMA.owl#Affordance",
+        "HelicalMotion": "http://www.ease-crc.org/ont/SOMA.owl#HelicalMotion",
+        "Screwing": "https://www.ai4c2ps.eu/ontologies/2024/core#Screwing",
+        "Workflow": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow",
+        "PhysicalTask": "http://www.ease-crc.org/ont/SOMA.owl#PhysicalTask",
+        "Holding": "http://www.ease-crc.org/ont/SOMA.owl#Holding",
+        "Positioning": "http://www.ease-crc.org/ont/SOMA.owl#Positioning",
+        "Orienting": "http://www.ease-crc.org/ont/SOMA.owl#Orienting",
+        "Action": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action",
+        "DesignedComponent": "http://www.ease-crc.org/ont/SOMA.owl#DesignedComponent",
+        "MentalTask": "http://www.ease-crc.org/ont/SOMA.owl#MentalTask",
+        "LookingFor": "http://www.ease-crc.org/ont/SOMA.owl#LookingFor",
+        "PerceptionAbility": "https://www.ai4c2ps.eu/ontologies/2024/CognitionOntology#PerceptionAbility",
+        "Perceiving": "http://www.ease-crc.org/ont/SOMA.owl#Perceiving",
+        "MotorActionAbility": "https://www.ai4c2ps.eu/ontologies/2024/CognitionOntology#MotorActionAbility",
+        "MotorActionFunction": "https://www.ai4c2ps.eu/ontologies/2024/CognitionOntology#MotorActionFunction",
+        "DecisionMaking": "https://www.ai4c2ps.eu/ontologies/2024/CognitionOntology#DecisionMaking",
+        "AttentionFunction": "https://www.ai4c2ps.eu/ontologies/2024/CognitionOntology#AttentionFunction",
+        "DesignedContainer": "http://www.ease-crc.org/ont/SOMA.owl#DesignedContainer",
+        "Thing": "http://www.w3.org/2002/07/owl#Thing"
+      }
+    ]
+  },
+  "entities": [
+    {
+      "id": "urn:ngsi-ld:Cobot:ur5",
+      "type": [
+        "Entity",
+        "Cobot",
+        "Agent"
+      ],
+      "name": "ur5",
+      "hasAbility": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Ability:canGrasp",
+          "urn:ngsi-ld:Ability:canScrew"
+        ]
+      },
+      "hasPart": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Hand-E:handE_Gripper"
+      },
+      "canPerform": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Action:screwBoltAction_2",
+          "urn:ngsi-ld:Action:screwBoltAction_3",
+          "urn:ngsi-ld:Action:screwBoltAction_1"
+        ]
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Hand-E:handE_Gripper",
+      "type": [
+        "Object",
+        "Hand-E",
+        "Entity"
+      ],
+      "name": "handE_Gripper",
+      "hasRole": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Grasper:graspingTool"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Ability:canGrasp",
+      "type": [
+        "Capability",
+        "Graspability",
+        "Ability",
+        "Disposition",
+        "Entity"
+      ],
+      "name": "canGrasp",
+      "isDescribedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Affordance:graspable"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Ability:canScrew",
+      "type": [
+        "Capability",
+        "Ability",
+        "Screwability",
+        "Disposition",
+        "Entity"
+      ],
+      "name": "canScrew",
+      "affordsTask": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Screwing:screwBoltTask_1"
+      },
+      "isDescribedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Affordance:screwable"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Operator:emmanuel",
+      "type": [
+        "Operator",
+        "Agent"
+      ],
+      "name": "emmanuel"
+    },
+    {
+      "id": "urn:ngsi-ld:Screw:screw_1",
+      "type": [
+        "Object",
+        "Screw"
+      ],
+      "name": "screw_1"
+    },
+    {
+      "id": "urn:ngsi-ld:Screw:screw_2",
+      "type": [
+        "Object",
+        "Screw"
+      ],
+      "name": "screw_2"
+    },
+    {
+      "id": "urn:ngsi-ld:Screw:screw_3",
+      "type": [
+        "Object",
+        "Screw"
+      ],
+      "name": "screw_3"
+    },
+    {
+      "id": "urn:ngsi-ld:Screwdriver:screwdriver",
+      "type": [
+        "Object",
+        "Screwdriver"
+      ],
+      "name": "screwdriver",
+      "hasRole": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Screwer:screwingTool"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Screwer:screwingTool",
+      "type": [
+        "Role",
+        "Screwer"
+      ],
+      "name": "screwingTool"
+    },
+    {
+      "id": "urn:ngsi-ld:ExecutionStateRegion:executionStateActive",
+      "type": [
+        "ExecutionStateRegion"
+      ],
+      "name": "executionStateActive"
+    },
+    {
+      "id": "urn:ngsi-ld:ExecutionStateRegion:executionStatePending",
+      "type": [
+        "ExecutionStateRegion"
+      ],
+      "name": "executionStatePending"
+    },
+    {
+      "id": "urn:ngsi-ld:ExecutionStateRegion:executionStateCancelled",
+      "type": [
+        "ExecutionStateRegion"
+      ],
+      "name": "executionStateCancelled"
+    },
+    {
+      "id": "urn:ngsi-ld:ExecutionStateRegion:executionStateFailed",
+      "type": [
+        "ExecutionStateRegion"
+      ],
+      "name": "executionStateFailed"
+    },
+    {
+      "id": "urn:ngsi-ld:ExecutionStateRegion:executionStateSucceeded",
+      "type": [
+        "ExecutionStateRegion"
+      ],
+      "name": "executionStateSucceeded"
+    },
+    {
+      "id": "urn:ngsi-ld:ExecutionStateRegion:executionStatePaused",
+      "type": [
+        "ExecutionStateRegion"
+      ],
+      "name": "executionStatePaused"
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalObject:asssembledRotorStatorLidNut",
+      "type": [
+        "Object",
+        "PhysicalObject"
+      ],
+      "name": "asssembledRotorStatorLidNut",
+      "hasRole": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Patient:screwingBearer"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Patient:screwingBearer",
+      "type": [
+        "Role",
+        "Patient"
+      ],
+      "name": "screwingBearer"
+    },
+    {
+      "id": "urn:ngsi-ld:Grasper:graspingTool",
+      "type": [
+        "Role",
+        "Grasper"
+      ],
+      "name": "graspingTool"
+    },
+    {
+      "id": "urn:ngsi-ld:Affordance:screwable",
+      "type": [
+        "Affordance",
+        "Description"
+      ],
+      "name": "screwable",
+      "definesBearer": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Patient:screwingBearer"
+      },
+      "definesTrigger": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Grasper:graspingTool"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Affordance:graspable",
+      "type": [
+        "Affordance",
+        "Description"
+      ],
+      "name": "graspable",
+      "definesBearer": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Screwer:screwingTool"
+      },
+      "definesTrigger": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Grasper:graspingTool"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:HelicalMotion:helicalMotion",
+      "type": [
+        "HelicalMotion"
+      ],
+      "name": "helicalMotion",
+      "isMotionFor": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Screwing:screwBoltTask_1"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Screwing:screwBoltTask_1",
+      "type": [
+        "Screwing",
+        "Entity",
+        "Task"
+      ],
+      "name": "screwBoltTask_1",
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Ability:canScrew"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Positioning:positionNutTask_1"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:screwBoltAction_1"
+      }
+    },
+
+
+    {"id": "urn:ngsi-ld:Workflow:screwingWorkflow",
+     "type": [
+        "Workflow"
+      ],
+      "name": "screwingWorkflow",
+      "hasStep": {
+      "type": "Relationship",
+      "object": [
+          "urn:ngsi-ld:PhysicalTask:assemblyTask",
+          "urn:ngsi-ld:PhysicalTask:positioningRotor_SatorInCasingTask",
+          "urn:ngsi-ld:PhysicalTask:lidPositioningAndFixatingTask"
+        ]
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:assemblyTask",
+      "type": [
+        "PhysicalTask",
+        "Entity",
+        "Task"
+      ],
+      "name": "assemblyTask",
+      "hasPart": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Holding:holdingStatorTask",
+          "urn:ngsi-ld:Positioning:slotRotorTask",
+          "urn:ngsi-ld:Orienting:rotateRotorTask"
+        ]
+      }
+    }
+    
+    ,
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:positioningRotor_SatorInCasingTask",
+      "type": [
+        "PhysicalTask",
+        "Entity",
+        "Task"
+      ],
+      "name": "positioningRotor_SatorInCasingTask",
+      "hasPart": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Positioning:positioningCasingTask",
+          "urn:ngsi-ld:Positioning:positioningAssembledRotorStatorTask"
+        ]
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PhysicalTask:assemblyTask"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:lidPositioningAndFixatingTask",
+      "type": [
+        "PhysicalTask",
+        "Entity",
+        "Task"
+      ],
+      "name": "lidPositioningAndFixatingTask",
+      "hasPart": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Positioning:positionLidTask",
+          "urn:ngsi-ld:Positioning:positionNutTask_1",
+          "urn:ngsi-ld:Screwing:screwBoltTask_1",
+          "urn:ngsi-ld:Screwing:screwBoltTask_2",
+          "urn:ngsi-ld:Screwing:screwBoltTask_3"
+        ]
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PhysicalTask:positioningRotor_SatorInCasingTask"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Holding:holdingStatorTask",
+      "type": [
+        "Action",
+        "Entity",
+        "Task",
+        "Holding"
+      ],
+      "name": "holdingStatorTask",
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:holdStatorAction"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      },
+      "isFirstSubtask": {
+        "type": "Property",
+        "value": true
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Positioning:slotRotorTask",
+      "type": [
+        "Entity",
+        "Positioning",
+        "Action"
+      ],
+      "name": "slotRotorTask",
+      "hasPart": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:MentalTask:searchRotorTask",
+          "urn:ngsi-ld:PhysicalTask:takeRotorTask",
+          "urn:ngsi-ld:LookingFor:locateStatorTask",
+          "urn:ngsi-ld:PhysicalTask:moveRotorToStatorTask"
+        ]
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Holding:holdingStatorTask"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Orienting:rotateRotorTask",
+      "type": [
+        "Entity",
+        "Task",
+        "Orienting",
+        "Action"
+      ],
+      "name": "rotateRotorTask",
+      "hasPart": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:LookingFor:locateRotorStatorTask",
+          "urn:ngsi-ld:PhysicalTask:takeRotorStatorTask",
+          "urn:ngsi-ld:Perceiving:checkAlignmentTask",
+          "urn:ngsi-ld:PhysicalTask:rotatingRotorTask"
+        ]
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Positioning:slotRotorTask"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      },
+      "isLastSubtask": {
+        "type": "Property",
+        "value": true
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:holdStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "holdStatorAction",
+      "hasInput": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:DesignedComponent:stator"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Cobot:ur5",
+          "urn:ngsi-ld:Operator:emmanuel"
+        ]
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:DesignedComponent:stator",
+      "type": [
+        "Object",
+        "DesignedComponent"
+      ],
+      "name": "stator"
+    },
+
+
+    {"id": "urn:ngsi-ld:MentalTask:searchRotorTask",
+      "type": [
+        "Entity",
+        "Task",
+        "MentalTask"
+      ],
+      "name": "searchRotorTask",
+      "involvesFunction": {
+      "type": "Relationship",
+      "object": "urn:ngsi-ld:Perceiving:visualPerceptionFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PerceptionAbility:visualPerception"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:searchRotorAction"
+      }
+    }
+    
+    ,
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:takeRotorTask",
+      "type": [
+        "PhysicalTask",
+        "Entity",
+        "Task"
+      ],
+      "name": "takeRotorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionFunction:motorFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:MotorActionAbility:pickUpItem",
+          "urn:ngsi-ld:MotorActionAbility:moveArm"
+        ]
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MentalTask:searchRotorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:takeRotorAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:LookingFor:locateStatorTask",
+      "type": [
+        "Entity",
+        "Task",
+        "LookingFor"
+      ],
+      "name": "locateStatorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Perceiving:visualPerceptionFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PerceptionAbility:visualPerception"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PhysicalTask:takeRotorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:locateStatorAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:moveRotorToStatorTask",
+      "type": [
+        "PhysicalTask",
+        "Entity",
+        "Task"
+      ],
+      "name": "moveRotorToStatorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionFunction:motorFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionAbility:moveArm"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:LookingFor:locateStatorTask"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:searchRotorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "searchRotorAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PerceptionAbility:visualPerception",
+      "type": [
+        "Ability",
+        "PerceptionAbility"
+      ],
+      "name": "visualPerception"
+    },
+    {
+      "id": "urn:ngsi-ld:Perceiving:visualPerceptionFunction",
+      "type": [
+        "Function",
+        "Perceiving"
+      ],
+      "name": "visualPerceptionFunction"
+    },
+    {
+      "id": "urn:ngsi-ld:Action:takeRotorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "takeRotorAction",
+      "hasInput": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:DesignedComponent:rotor"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:MotorActionAbility:pickUpItem",
+      "type": [
+        "MotorActionAbility",
+        "Ability"
+      ],
+      "name": "pickUpItem"
+    },
+    {
+      "id": "urn:ngsi-ld:MotorActionAbility:moveArm",
+      "type": [
+        "MotorActionAbility",
+        "Ability"
+      ],
+      "name": "moveArm"
+    },
+    {
+      "id": "urn:ngsi-ld:MotorActionFunction:motorFunction",
+      "type": [
+        "Function",
+        "MotorActionFunction"
+      ],
+      "name": "motorFunction"
+    },
+    {
+      "id": "urn:ngsi-ld:DesignedComponent:rotor",
+      "type": [
+        "Object",
+        "DesignedComponent"
+      ],
+      "name": "rotor"
+    },
+    {
+      "id": "urn:ngsi-ld:Action:locateStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "locateStatorAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:moveRotorToStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "moveRotorToStatorAction",
+      "hasInput": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:DesignedComponent:rotor",
+          "urn:ngsi-ld:DesignedComponent:stator"
+        ]
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Operator:emmanuel"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:MentalTask:slotRotorIntoStatorTask",
+      "type": [
+        "Entity",
+        "Task",
+        "MentalTask"
+      ],
+      "name": "slotRotorIntoStatorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionFunction:motorFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionAbility:applyPressure"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PhysicalTask:moveRotorToStatorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:slotRotorIntoStatorAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:slotRotorIntoStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "slotRotorIntoStatorAction",
+      "hasInput": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PhysicalObject:rotorStator"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Operator:emmanuel"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:MotorActionAbility:applyPressure",
+      "type": [
+        "MotorActionAbility",
+        "Ability"
+      ],
+      "name": "applyPressure"
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalObject:rotorStator",
+      "type": [
+        "Object",
+        "PhysicalObject"
+      ],
+      "name": "rotorStator"
+    },
+    {
+      "id": "urn:ngsi-ld:LookingFor:locateRotorStatorTask",
+      "type": [
+        "Entity",
+        "Task",
+        "LookingFor"
+      ],
+      "name": "locateRotorStatorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Perceiving:visualPerceptionFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PerceptionAbility:visualPerception"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:locateRotorStatorAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:takeRotorStatorTask",
+      "type": [
+        "PhysicalTask",
+        "Entity",
+        "Task"
+      ],
+      "name": "takeRotorStatorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionFunction:motorFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:MotorActionAbility:takeItem",
+          "urn:ngsi-ld:MotorActionAbility:moveArm"
+        ]
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:LookingFor:locateRotorStatorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:takeRotorStatorAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Perceiving:checkAlignmentTask",
+      "type": [
+        "Entity",
+        "Perceiving",
+        "Task"
+      ],
+      "name": "checkAlignmentTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Perceiving:visualPerceptionFunction",
+          "urn:ngsi-ld:DecisionMaking:decisionMaking",
+          "urn:ngsi-ld:AttentionFunction:attention"
+        ]
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PerceptionAbility:visualPerception"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PhysicalTask:takeRotorStatorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:checkAlignmentAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:rotatingRotorTask",
+      "type": [
+        "PhysicalTask",
+        "Entity",
+        "Task"
+      ],
+      "name": "rotatingRotorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionFunction:motorFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionAbility:moveArm"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Perceiving:checkAlignmentTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:rotatingRotorAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:locateRotorStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "locateRotorStatorAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:takeRotorStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "takeRotorStatorAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:MotorActionAbility:takeItem",
+      "type": [
+        "MotorActionAbility",
+        "Ability"
+      ],
+      "name": "takeItem"
+    },
+    {
+      "id": "urn:ngsi-ld:Action:checkAlignmentAction",
+      "type": [
+        "Action"
+      ],
+      "name": "checkAlignmentAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:DecisionMaking:decisionMaking",
+      "type": [
+        "Function",
+        "DecisionMaking"
+      ],
+      "name": "decisionMaking"
+    },
+    {
+      "id": "urn:ngsi-ld:AttentionFunction:attention",
+      "type": [
+        "AttentionFunction",
+        "Function"
+      ],
+      "name": "attention"
+    },
+    {
+      "id": "urn:ngsi-ld:Action:rotatingRotorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "rotatingRotorAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalObject:asssembledRotorStator",
+      "type": [
+        "PhysicalObject"
+      ],
+      "name": "asssembledRotorStator"
+    },
+    {
+      "id": "urn:ngsi-ld:Positioning:positioningCasingTask",
+      "type": [
+        "Entity",
+        "Positioning",
+        "Task"
+      ],
+      "name": "positioningCasingTask",
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Orienting:rotateRotorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:positioningCasingAction"
+      },
+      "isFirstSubtask": {
+        "type": "Property",
+        "value": true
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Positioning:positioningAssembledRotorStatorTask",
+      "type": [
+        "Entity",
+        "Positioning",
+        "Task"
+      ],
+      "name": "positioningAssembledRotorStatorTask",
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Positioning:positioningCasingTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:positioningAssembledRotorStatorAction"
+      },
+      "isLastSubtask": {
+        "type": "Property",
+        "value": true
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:positioningCasingAction",
+      "type": [
+        "Action"
+      ],
+      "name": "positioningCasingAction",
+      "hasInput": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:DesignedContainer:casing"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Cobot:ur5",
+          "urn:ngsi-ld:Operator:emmanuel"
+        ]
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:DesignedContainer:casing",
+      "type": [
+        "Object",
+        "DesignedContainer"
+      ],
+      "name": "casing"
+    },
+    {
+      "id": "urn:ngsi-ld:Action:positioningAssembledRotorStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "positioningAssembledRotorStatorAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Cobot:ur5",
+          "urn:ngsi-ld:Operator:emmanuel"
+        ]
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Positioning:positionLidTask",
+      "type": [
+        "Entity",
+        "Positioning",
+        "Task"
+      ],
+      "name": "positionLidTask",
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Positioning:positioningAssembledRotorStatorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:positionLidAction"
+      },
+      "isFirstSubtask": {
+        "type": "Property",
+        "value": true
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Positioning:positionNutTask_1",
+      "type": [
+        "Entity",
+        "Positioning",
+        "Task"
+      ],
+      "name": "positionNutTask_1",
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Positioning:positionLidTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:positionNutAction_1"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Screwing:screwBoltTask_2",
+      "type": [
+        "Screwing",
+        "Entity",
+        "Task"
+      ],
+      "name": "screwBoltTask_2",
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Ability:canScrew"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Screwing:screwBoltTask_1"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:screwBoltAction_2"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Screwing:screwBoltTask_3",
+      "type": [
+        "Screwing",
+        "Entity",
+        "Task"
+      ],
+      "name": "screwBoltTask_3",
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Ability:canScrew"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Screwing:screwBoltTask_2"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:screwBoltAction_3"
+      },
+      "isLastSubtask": {
+        "type": "Property",
+        "value": true
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:DesignedComponent:lid",
+      "type": [
+        "Object",
+        "DesignedComponent"
+      ],
+      "name": "lid"
+    },
+    {
+      "id": "urn:ngsi-ld:Action:positionLidAction",
+      "type": [
+        "Action"
+      ],
+      "name": "positionLidAction",
+      "hasInput": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:DesignedComponent:lid"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:positionNutAction_1",
+      "type": [
+        "Action"
+      ],
+      "name": "positionNutAction_1",
+      "hasInput": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Screw:screw_1",
+          "urn:ngsi-ld:DesignedComponent:lid",
+          "urn:ngsi-ld:Screwdriver:screwdriver"
+        ]
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:screwBoltAction_1",
+      "type": [
+        "Action"
+      ],
+      "name": "screwBoltAction_1",
+      "hasInput": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Screw:screw_1",
+          "urn:ngsi-ld:Screwdriver:screwdriver"
+        ]
+      },
+      "hasExecutionState": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:ExecutionStateRegion:executionStateActive"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Operator:emmanuel"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:screwBoltAction_2",
+      "type": [
+        "Action"
+      ],
+      "name": "screwBoltAction_2",
+      "hasInput": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Screw:screw_2",
+          "urn:ngsi-ld:Screwdriver:screwdriver"
+        ]
+      },
+      "hasExecutionState": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:ExecutionStateRegion:executionStatePending"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Operator:emmanuel",
+          "urn:ngsi-ld:Cobot:ur5"
+        ]
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:screwBoltAction_3",
+      "type": [
+        "Action"
+      ],
+      "name": "screwBoltAction_3",
+      "hasInput": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Screw:screw_3",
+          "urn:ngsi-ld:Screwdriver:screwdriver"
+        ]
+      },
+      "hasExecutionState": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:ExecutionStateRegion:executionStateActive"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Operator:emmanuel"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Thing:HasAbilityRule",
+      "type": [
+        "Thing"
+      ],
+      "name": "HasAbilityRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Thing:FollowsActionRule",
+      "type": [
+        "Thing"
+      ],
+      "name": "FollowsActionRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Thing:FollowsPartRule",
+      "type": [
+        "Thing"
+      ],
+      "name": "FollowsPartRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Thing:CanPerformRule",
+      "type": [
+        "Thing"
+      ],
+      "name": "CanPerformRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Thing:FallbackToCobot",
+      "type": [
+        "Thing"
+      ],
+      "name": "FallbackToCobot"
+    }
+  ],
+  "rules": [
+    {
+      "id": "urn:ngsi-ld:Rule:HasAbilityRule",
+      "type": "SWRLRule",
+      "value": "AI4C2PS.HasAbilityRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Rule:FollowsActionRule",
+      "type": "SWRLRule",
+      "value": "AI4C2PS.FollowsActionRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Rule:FollowsPartRule",
+      "type": "SWRLRule",
+      "value": "AI4C2PS.FollowsPartRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Rule:CanPerformRule",
+      "type": "SWRLRule",
+      "value": "AI4C2PS.CanPerformRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Rule:FallbackToCobot",
+      "type": "SWRLRule",
+      "value": "AI4C2PS.FallbackToCobot"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "agents": [
+    {"name": "UR5", "type": "Cobot"},
+    {"name": "Emmanuel", "type": "Operator"}
+
+  ],
+  "objects": [
+    {"name": "ObjectToPick", "type": "DesignedComponent","hasLocalization":"ObjectLocalization","hasRole":"ObjectSelectd","hasDisposition":"Graspability"},
+    {"name": "ObjectLocalization", "type": "Localization"},
+    {"name":"ObjectSelectd","type":"SelectedObject"}
+  ],
+  "tools": [
+    {"name": "Gripper_1", "type": "Gripper","hasRole":"GraspingTool"},
+    {"name": "GraspingTool", "type": "Grasper"}
+  ],
+  "dispositions": [
+    {"name": "Graspable", "type": "Affordance","definesBearer":"ObjectToPick","definesTrigger":"GraspingTool","definesTask":"PickAndPlaceTask"}
+    ,{"name":"Graspability_1","type":"Graspability"},
+    {
+    "name": "GraspingCapability",
+    "type": "Capability",
+    "isDescribedBy": "Graspable"
+
+  },
+  {"name": "GraspingAbility", "type":"Ability"}
+  ],
+  "actions": [
+    {"name": "PickingAction", "type": "PhysicalAction","executesTask":"PickingTask","hasParticipant":"UR5"},
+    {"name": "PlacingAction", "type": "PhysicalAction", "executesTask":"PlacingTask","hasParticipant":"UR5"},
+    {"name": "GraspingAction", "type": "PhysicalAction", "executesTask":"GraspingTask","hasParticipant":"UR5"},
+    {"name": "MovingAction", "type": "PhysicalAction", "executesTask":"MovingTask","hasParticipant":"UR5"},
+    {"name": "CheckingAction", "type": "PhysicalAction", "executesTask":"CheckingingTask","hasParticipant":"UR5"},
+    {"name": "PuttingDownAction", "type": "PhysicalAction", "executesTask":"PuttingDownTask","hasParticipant":"UR5"}
+    
+
+
+  ],
+
+  "tasks": [
+    {
+      "name": "PickAndPlaceTask",
+      "type": "Task",
+      "requiresAbility": "GraspingAbility"
+    },
+    {
+      "name": "PickingTask",
+      "type": "Task",
+      "isPartOf": "PickAndPlaceTask"
+    
+    },
+    {
+      "name": "PlacingTask",
+      "type": "Placing",
+        "isPartOf": "PickAndPlaceTask"
+    },
+    {
+      "name": "GraspingTask",
+      "type": "Grasping",
+        "isPartOf": "PickAndPlaceTask"
+    },
+    {
+      "name": "MovingTask",
+      "type": "MovingTo",
+     "isPartOf": "PickAndPlaceTask"
+    },
+    {
+      "name": "CheckingTask",
+      "type": "ChechingObjectPresence",
+      "isPartOf": "PickAndPlaceTask"    
+    },
+    {
+      "name": "PuttingDownTask",
+      "type": "PuttingDown ",
+      "isPartOf": "PickAndPlaceTask"
+    }
+
+  ]
+
+
+
+
+}

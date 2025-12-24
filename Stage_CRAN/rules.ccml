@@ -1,0 +1,145 @@
+store acs/fr_store:
+    rule initialisation:
+        conc:
+            mcs/goals#set-goal 1.1
+            mcs/sl#write-1 1
+            mov#cmd-action wait
+        cond:
+            vis#intern_state initialised
+        
+        
+
+    rule creation_goal_13:
+        conc:
+            mcs/goals#set-goal 1.3
+            mcs/goals#eval pass
+            mcs/sl#write-2 1
+            mcs/sl#read-1 1
+            mov#cmd-action wait
+        cond:
+            mcs/sl#match-1
+            vis#location stator_true
+        
+
+    rule creation_goal_21:
+        conc:
+            mcs/goals#set-goal 2.1
+            mcs/goals#eval pass
+            mcs/sl#write-3 1
+            mcs/sl#read-2 1
+        cond:
+            mcs/sl#match-2
+            vis#assembled motor_true
+        
+
+    rule creation_goal_22:
+        conc:
+            mcs/goals#set-goal 2.2
+            mcs/goals#eval pass
+            mcs/sl#write-4 1
+            mcs/sl#read-3 1
+        cond:
+            mcs/sl#match-3
+            vis#location box_true
+        
+
+    rule creation_goal_31:
+        conc:
+            mcs/goals#set-goal 3.1
+            mcs/goals#eval pass
+            mcs/sl#write-5 1
+            mcs/sl#read-4 1
+        cond:
+            mcs/sl#match-4
+            vis#location motor_true
+        
+
+    rule creation_goal_331:
+        conc:
+            mcs/goals#set-goal 3.3.1
+            mcs/goals#eval pass
+            mcs/sl#write-6 1
+            mcs/sl#read-5 1
+        cond:
+            mcs/sl#match-5 
+            vis#location lid_true
+        
+
+    rule creation_goal_332:
+        conc:
+            mcs/goals#set-goal 3.3.2
+            mcs/goals#eval pass
+            mcs/sl#write-7 1
+            mcs/sl#read-6 1
+            mov#cmd-action wait
+        cond:
+            mcs/sl#match-6
+            vis#location screw_true
+        
+
+    rule creation_goal_333:
+        conc:
+            mcs/goals#set-goal 3.3.3
+            mcs/goals#eval pass
+            mcs/sl#write-8 1
+            mcs/sl#read-7 1
+            mov#cmd-action wait
+        cond:
+            mcs/sl#match-7
+            vis#location screw_true
+        
+    
+    rule end_goal:
+        conc:
+            mcs/goals#eval pass
+            mcs/sl#read-8 1
+            vis#intern_state shutdown
+        cond:
+            mcs/sl#match-8
+            vis#location screw_true
+        
+
+    rule wait_initialisation:
+        conc:
+            mov#cmd-action wait
+        cond:
+            vis#intern_state shutdown
+        
+
+    rule waiting:
+        conc:
+            mov#cmd-action wait
+        cond:
+            mcs/sl#match-2
+            vis#assembled motor_false
+
+    rule waiting:
+        conc:
+            mov#cmd-action wait
+        cond:
+            mcs/sl#match-6
+            vis#location screw_false
+
+    rule waiting:
+        conc:
+            mov#cmd-action wait
+        cond:
+            mcs/sl#match-7
+            vis#location screw_false
+
+    rule waiting:
+        conc:
+            mov#cmd-action wait
+        cond:
+            mcs/sl#match-8
+            vis#location screw_false
+        
+
+    rule null:
+        conc: 
+            mov#cmd-action wait
+        cond:
+            vis#null null
+        
+
+    

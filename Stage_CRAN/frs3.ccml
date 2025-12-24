@@ -1,0 +1,483 @@
+
+store acs/fr_store:
+    rule initialisation
+        cond:
+            system_initialised
+        conc:
+            set-goal-1.1
+
+    rule creation_goal_1.2
+        cond:
+            goal#0
+            -set-goal-1.2
+            stator_taken
+            stator_placed
+        conc:
+            set-goal-1.2
+            eval-goal-pass
+            goal#0
+
+    rule creation_goal_1.3
+        cond:
+            goal#1
+            -set-goal-1.3
+            rotor_taken
+            rotor_placed
+        conc:
+            set-goal-1.3
+            eval-goal-pass
+            goal#1
+
+    rule creation_goal_2.1
+        cond:
+            goal#2
+            -set-goal-2.1
+            motor_assembled
+        conc:
+            set-goal-2.1
+            eval-goal-pass
+            goal#2
+            action-ungrasp
+
+    rule creation_goal_2.2
+        cond:
+            goal#3
+            -set-goal-2.2
+            box_placed
+        conc:
+            set-goal-2.2
+            eval-goal-pass
+            goal#3
+            action_ungrasp
+
+    rule creation_goal_3.1
+        cond:
+            goal#4
+            -set-goal-3.1
+            motor_placed
+        conc:
+            set-goal-3.1
+            eval-goal-pass
+            goal#4
+            action_ungrasp
+
+    rule creation_goal_3.2.1
+        cond:
+            goal#5
+            -set-goal-3.2.1
+            lid_placed
+        conc:
+            set-goal-3.2.1
+            eval-goal-pass
+            goal#5
+            action_ungrasp
+
+    rule creation_goal_3.2.2
+        cond:
+            goal#6
+            -set-goal-3.2.2
+            nut_placed
+        conc:
+            set-goal-3.2.2
+            eval-goal-pass
+            goal#6
+            action_ungrasp
+
+    rule creation_goal_3.2.3
+        cond:
+            goal#7
+            -set-goal-3.2.3
+            nut_placed
+        conc:
+            set-goal-3.2.3
+            eval-goal-pass
+            goal#7
+            action_ungrasp
+
+    rule creation_goal_3.3.1
+        cond:
+            goal#8
+            -set-goal-3.3.1
+            nut_placed
+        conc:
+            set-goal-3.3.1
+            eval-goal-pass
+            goal#8
+            action_ungrasp
+
+    rule creation_goal_3.3.2
+        cond:
+            goal#9
+            -set-goal-3.3.2
+            screw_placed
+        conc:
+            set-goal-3.3.2
+            eval-goal-pass
+            goal#9
+            action_ungrasp
+
+    rule creation_goal_3.3.3
+        cond:
+            goal#10
+            -set-goal-3.3.3
+            screw_placed
+        conc:
+            set-goal-3.3.3
+            eval-goal-pass
+            goal#10
+            action_ungrasp
+    
+    rule end_goal
+        cond:
+            goal#11
+            screw_placed
+        conc:
+            eval-goal-pass
+            goal#11
+            action_ungrasp
+            system-shutdown
+
+    rule reach_stator
+        cond:
+            goal#0
+            -set-goal-1.2
+            -stator
+        conc:
+            action-move
+
+    rule grasp_stator
+        cond:
+            goal#0
+            -set-goal-1.2
+            stator
+        conc:
+            action-grasp
+
+    rule move_stator
+        cond:
+            goal#0
+            -set-goal-1.2
+            stator_taken
+        conc:
+            action-move
+
+    rule reach_rotor
+        cond:
+            goal#1
+            -set-goal-1.3
+            -rotor
+        conc:
+            action-move
+
+    rule grasp_rotor
+        cond:
+            goal#1
+            -set-goal-1.3
+            rotor
+        conc:
+            action-grasp
+
+    rule move_rotor
+        cond:
+            goal#1
+            -set-goal-1.3
+            rotor
+        conc:
+            action-move
+
+    rule rotate_rotor
+        cond:
+            goal#2
+            -set-goal-2.1
+            rotor_taken
+        conc:
+            action-rotate
+
+    rule reach_box
+        cond:
+            goal#3
+            -set-goal-2.2
+            -box
+        conc:
+            action-move
+
+    rule grasp_box
+        cond:
+            goal#3
+            -set-goal-2.2
+            box
+        conc:
+            action-grasp
+
+    rule move_box
+        cond:
+            goal#3
+            -set-goal-2.2
+            box_taken
+        conc:
+            action-move
+
+    rule reach_motor
+        cond:
+            goal#4
+            -set-goal-3.1
+            -motor
+        conc:
+            action_move
+    
+    rule grasp_motor
+        cond:
+            goal#4
+            -set-goal-3.1
+            motor
+        conc:
+            action_grasp
+
+    rule move_motor
+        cond:
+            goal#4
+            -set-goal-3.1
+            motor_taken
+        conc:
+            action_move
+
+    rule reach_lid
+        cond:
+            goal#5
+            -set-goal-3.2.1
+            -lid
+        conc:
+            action_move
+
+    rule grasp_lid
+        cond:
+            goal#5
+            -set-goal-3.2.1
+            lid
+        conc:
+            action_grasp
+
+    rule move_lid
+        cond:
+            goal#5
+            -set-goal-3.2.1
+            lid_taken
+        conc:
+            action_move
+
+    rule reach_nut
+        cond: 
+            goal#6 or goal#7 or goal#8
+            -set-goal-3.3.1
+            -nut
+        cond:
+            action-move
+
+    rule grasp_nut
+        cond: 
+            goal#6 or goal#7 or goal#8
+            -set-goal-3.3.1
+            nut
+        cond:
+            action-grasp
+
+    rule move_nut
+        cond: 
+            goal#6 or goal#7 or goal#8
+            -set-goal-3.3.1
+            nut-taken
+        cond:
+            action-move
+
+    rule reach_screw
+        cond: 
+            goal#9 or goal#10 or goal#11
+            -system_shutdown
+            -screw
+        cond:
+            action-move
+
+    rule grasp_screw
+        cond: 
+            goal#9 or goal#10 or goal#11
+            -system_shutdown
+            screw
+        cond:
+            action-grasp
+
+    rule move_screw
+        cond: 
+            goal#9 or goal#10 or goal#11
+            -system_shutdown
+            screw-taken
+        cond:
+            action-move
+
+    [chunk rotor]
+        feature("vis-piece","rotor")
+
+    [chunk stator]
+        feature("vis-piece","stator")
+
+    [chunk box]
+        feature("vis-piece","box")
+    
+    [chunk lid]
+        feature("vis-piece","lid")
+
+    [chunk nut]
+        feature("vis-piece","nut")
+
+    [chunk screw]
+        feature("vis-piece","screw")
+
+    [chunk motor]
+        feature("vis-piece","motor")
+
+    [chunk rotor_taken]
+        feature("vis-taken","rotor_true")
+
+    [chunk stator_taken]
+        feature("vis-taken","stator_true")
+
+    [chunk box_taken]
+        feature("vis-taken","box_true")
+
+    [chunk lid_taken]
+        feature("vis-taken","lid_true")
+    
+    [chunk nut_taken]
+        feature("vis-taken","nut_true")
+
+    [chunk screw_taken]
+        feature("vis-taken","screw_true")
+    
+    [chunk motor_taken]
+        feature("vis-taken","motor_true")
+
+    [chunk rotor_placed]
+        feature("vis-location","rotor_true")
+
+    [chunk stator_placed]
+        feature("vis-location","stator_true")
+
+    [chunk box_placed]
+        feature("vis-location","box_true")
+        
+    [chunk lid_placed]
+        feature("vis-location","lid_true")
+
+    [chunk nut_placed]
+        feature("vis-location","nut_true")
+
+    [chunk screw_placed]
+        feature("vis-location","screw_true")
+    
+    [chunk motor_placed]
+        feature("vis-location","motor_true")
+
+    [chunk motor_assembled]
+        feature("vis-assembled","motor_true")
+
+    [chunk set-goal-1.1]
+        feature("set-goal","1.1")
+
+    [chunk set-goal-1.2]
+        feature("set-goal","1.2")
+
+    [chunk set-goal-1.3]
+        feature("set-goal","1.3")
+
+    [chunk set-goal-2.1]
+        feature("set-goal","2.1")
+
+    [chunk set-goal-2.2]
+        feature("set-goal","2.2")
+
+    [chunk set-goal-3.1]
+        feature("set-goal","3.1")
+
+    [chunk set-goal-3.2.1]
+        feature("set-goal","3.2.1")
+
+    [chunk set-goal-3.2.2]
+        feature("set-goal","3.2.2")
+
+    [chunk set-goal-3.2.3]
+        feature("set-goal","3.2.3")
+
+    [chunk set-goal-3.3.1]
+        feature("set-goal","3.3.1")
+
+    [chunk set-goal-3.3.2]
+        feature("set-goal","3.3.2")
+
+    [chunk set-goal-3.3.3]
+        feature("set-goal","3.3.3")
+
+    [chunk eval-goal-pass]
+        feature("eval-goal","pass")
+
+    [chunk eval-goal-fail]
+        feature("eval-goal","fail")
+
+    [chunk goal#0]
+        feature("goal_id","0")
+
+    [chunk goal#1]
+        feature("goal_id","1")
+
+    [chunk goal#2]
+        feature("goal_id","2")
+
+    [chunk goal#3]
+        feature("goal_id","3")
+
+    [chunk goal#4]
+        feature("goal_id","4")
+
+    [chunk goal#5]
+        feature("goal_id","5")
+
+    [chunk goal#6]
+        feature("goal_id","6")
+
+    [chunk goal#7]
+        feature("goal_id","7")
+
+    [chunk goal#8]
+        feature("goal_id","8")
+
+    [chunk goal#9]
+        feature("goal_id","9")
+
+    [chunk goal#10]
+        feature("goal_id","10")
+
+    [chunk goal#11]
+        feature("goal_id","11")
+
+    [chunk action-move]
+        feature("mov#cmd-action","move")
+
+    [chunk action-wait]
+        feature("mov#cmd-action","wait")
+
+    [chunk action-grasp]
+        feature("mov#cmd-action","grasp")
+
+    [chunk action-ungrasp]
+        feature("mov#cmd-action","ungrasp")
+
+    [chunk action-rotate]
+        feature("mov#cmd-action","rotate")
+
+    [chunk system-initialised]
+        feature("intern_state","initialised")
+
+    [chunk system-shutdown]
+        feature("intern_state","shutdown")
+
+    
+
+

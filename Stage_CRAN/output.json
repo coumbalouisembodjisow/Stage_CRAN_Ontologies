@@ -1,0 +1,2426 @@
+{
+  "context": {
+    "@context": [
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.jsonld",
+      "https://schema.lab.fiware.org/ld/context",
+      {
+        "Action": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Entity": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Ability": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Disposition": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Affordance": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "PhysicalObject": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "ExecutionStateRegion": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Workflow": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Positioning": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "HelicalMotion": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Cobot": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Grasper": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Hand-E": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Operator": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Screw": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Screwdriver": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Screwer": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Screwing": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Perceiving": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "MentalTask": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "AttentionFunction": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "MotorActionAbility": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "MotorActionFunction": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "PerceptionAbility": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "PhysicalTask": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Patient": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Capability": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "DesignedComponent": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "DesignedContainer": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Graspability": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Holding": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "LookingFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Orienting": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "Screwability": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasProfile": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasSample": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "inDeployment": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "deployedSystem": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasDeployment": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "forProperty": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "implements": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "deployedOnPlatform": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "detects": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasInput": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasOutput": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasProperty": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isPropertyOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasSubSystem": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "implementedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isProxyFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "wasOriginatedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasFeatureOfInterest": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasResult": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "madeBySensor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "observedProperty": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "usedProcedure": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "phenomenonTime": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "actsOnProperty": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "madeByActuator": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isHostedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "madeBySampler": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isResultOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "madeObservation": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "observes": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isObservedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isActedOnBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "madeActuation": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hosts": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isSampleOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "madeSampling": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isFeatureOfInterestOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "associatedWith": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasAbility": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasFunction": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasInterface": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "involvesFunction": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "requiresAbility": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "affordsBearer": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "affordsTask": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "affordsTrigger": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isQualityOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isClassifiedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isPartOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "affects": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "precedes": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isAffectedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "affordanceDefines": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "defines": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isDefinedInAffordance": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "affordanceDefinesTask": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "definesTask": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTaskDefinedInAffordance": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "affordsConcept": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isBearerAffordedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isDescribedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "definesBearer": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isConceptAffordedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "affordsPerformer": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isPerformerAffordedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "definesPerformer": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "affordsSetpoint": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isSetpointAffordedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "definesSetpoint": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTaskAffordedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTriggerAffordedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "definesTrigger": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "after": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "follows": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "before": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "answers": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "relatesToAnotherRole": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasAnswer": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "causes": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isReactionTo": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "causesTransition": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isEventIncludedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isCausedByEvent": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "coOccurs": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "overlaps": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "contains": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isContainedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "containsEvent": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "during": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "containsObject": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isLocationOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isInsideOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "coversObject": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "interactsWith": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isCoveredByObject": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "definesRole": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isBearerDefinedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "definesEventType": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isEventTypeDefinedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "definesInput": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "definesParticipant": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "definesOutput": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "definesParameter": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isParameterDefinedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isPerformerDefinedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "definesProcess": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isProcessDefinedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isSetpointDefinedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTriggerDefinedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "derivedFrom": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isSourceFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "describesQuality": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "describes": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isQualityDescribedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "directlyCauses": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isDirectReactionTo": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasTerminalScene": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "includesEvent": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "directlyDerivedFrom": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isDirectSourceFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "encapsulates": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "encodes": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "executesMotion": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isOccurrenceOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isExecutedMotionIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "finishedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "finishes": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "firstMember": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasMember": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "givesMeaningTo": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isGivenMeaningBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasAction": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasConstituent": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasAlterationResult": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasRegion": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isAlterationResultOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasBinding": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasPart": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasBindingFiller": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasBindingRole": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasChildLink": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isChildLinkOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasColor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasQuality": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isColorOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasDisposition": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isDispositionOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasEndLink": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasLink": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isEndLinkOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasExecutionState": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasFeature": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isFeatureOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasFirstStep": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasStep": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isFirstStepOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasFrictionAttribute": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasGoal": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasInitialScene": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasInitialState": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isInitialSceneOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasInitialSituation": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isInitialSituationOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "includesSituation": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isInitialStateOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasInputParameter": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasParameter": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isInputParameterFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasJointLimit": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isJointLimitOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasJointState": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isJointStateOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasComponent": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isLinkOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasLocalization": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isLocalizationOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasMassAttribute": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isMassAttributeOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasNetForce": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isNetForceOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasNextStep": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "directlyPrecedes": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasPreviousStep": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasOutputParameter": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isOutputParameterFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasParentLink": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isParentLinkOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasPhase": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasPhysicalComponent": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasPredecessor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasPreference": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isPreferenceOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "directlyFollows": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasProcessType": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isRelatedToConcept": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isProcessTypeOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasQuale": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isQualeOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasRootLink": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isRootLinkOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasShape": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isShapeOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasShapeRegion": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isShapeRegionOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasSoftwareAgent": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "involvesAgent": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasSpaceRegion": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isSpaceRegionFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasStateType": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isStateTypeOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasStatus": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isStepOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasSuccedence": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasSuccessor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasTask": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasTerminalState": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTerminalSceneOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasTerminalSituation": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTerminalSituationOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTerminalStateOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "includesConcept": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "includesObject": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isConceptIncludedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "includesRecord": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isReferenceOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isRecordIncludedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isSettingFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isSituationIncludedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "involvesArtifact": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasParticipant": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isArtifactInvolvedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "involvesEffector": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isEffectorInvolvedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "involvesPlace": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isPlaceInvolvedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isRegionFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isAnsweredBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isParticipantIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isAskedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isRoleDefinedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isConstituentOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isObjectIncludedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isCreatedOutputOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isOutputRoleOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTaskOfCreatedRole": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isDefinedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isDepositOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isOntopOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isDesignFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isDesignedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isRealizedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasRole": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isInputRoleOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isRoleOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "realizes": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isOccurringIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isExecutorDefinedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isParameterFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTaskOfInputRole": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasLocation": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isComponentOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isLinkedTo": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isMotionDescriptionFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isMovedByAgent": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "movesObject": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "classifies": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isOrderedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "orders": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTaskOfOutputRole": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isPerformedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isPhysicallyContainedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isPlanFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isAbout": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isReplacedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "replaces": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasSetting": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTaskDefinedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isSupportedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasCommonBoundary": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "supports": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTaskOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTerminatedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "terminates": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "meets": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "metBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "overlappedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "overlappedOn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "simultaneous": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "startedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "starts": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "transitionsBack": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "transitionsFrom": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "transitionsTo": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasExpectedTerminalSituation": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasPostcondition": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasRequiredInitialSituation": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasPrecondition": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "manifestsIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "preventedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "prevents": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "actsFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "executesTask": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "expresses": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isExecutedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isExpressedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "satisfies": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasGoalLocalization": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isMotionFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "actsThrough": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "characterizes": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isCharacterizedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "conceptualizes": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isConceptualizedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "concretelyExpresses": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isConcretelyExpressedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "coparticipatesWith": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "covers": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isCoveredBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "usesConcept": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "expands": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isRelatedToDescription": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isExpandedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "expressesConcept": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isConceptExpressedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "farFrom": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasConstraint": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isConstraintFor": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isMemberOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isPostconditionOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isPreconditionOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasTimeInterval": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTimeIntervalOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "includesAction": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isActionIncludedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "includesAgent": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isAgentIncludedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "includesTime": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTimeIncludedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "introduces": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isIntroducedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isAgentInvolvedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isConceptUsedIn": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isObservableAt": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isTimeOfObservationOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isParametrizedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "parametrizes": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isReferenceOfInformationRealizedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "realizesInformationAbout": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isSatisfiedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isSpecializedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "specializes": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isSubordinatedTo": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isSuperordinatedTo": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isUnifiedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "unifies": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "nearTo": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "sameSettingAs": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "performedBy": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "canPerform": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "resultTime": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasSimpleResult": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasColorValue": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasRegionDataValue": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasDataFormat": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasDataValue": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasDepth": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasShapeParameter": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasEventBegin": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasEventTime": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasEventEnd": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasFilePath": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasForceValue": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasFrictionValue": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasHSVValue": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasHeight": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasIntervalBegin": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasIntervalTime": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasIntervalEnd": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasJointEffort": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasJointParameter": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasJointEffortLimit": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasJointPosition": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasJointPositionMax": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasJointPositionMin": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasJointVelocity": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasJointVelocityLimit": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasLength": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasMassValue": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasNameString": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasPersistentIdentifier": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasPositionData": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasSpaceParameter": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasPriority": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasRGBValue": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasRadius": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasReferenceFrame": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasShapeScale": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasWidth": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isReificationOf": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasPitch": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasEventDate": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasIntervalDate": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasParameterDataValue": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isFirstSubtask": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "isLastSubtask": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasStepNumber": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      },
+      {
+        "hasActionNumber": "http://www.ai4c2ps.eu/ontologies/2024/main_onto.owl"
+      }
+    ]
+  },
+  "entities": [
+    {
+      "id": "urn:ngsi-ld:Cobot:ur5",
+      "type": [
+        "Cobot",
+        "Entity",
+        "Agent"
+      ],
+      "name": "ur5",
+      "hasAbility": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Ability:canGrasp",
+          "urn:ngsi-ld:Ability:canScrew"
+        ]
+      },
+      "hasPart": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Hand-E:handE_Gripper"
+      },
+      "canPerform": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:screwBoltAction_1"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Hand-E:handE_Gripper",
+      "type": [
+        "Object",
+        "Hand-E",
+        "Entity"
+      ],
+      "name": "handE_Gripper",
+      "hasRole": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Grasper:graspingTool"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Ability:canGrasp",
+      "type": [
+        "Ability",
+        "Capability",
+        "Entity",
+        "Graspability",
+        "Disposition"
+      ],
+      "name": "canGrasp",
+      "isDescribedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Affordance:graspable"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Ability:canScrew",
+      "type": [
+        "Ability",
+        "Capability",
+        "Entity",
+        "Disposition",
+        "Screwability"
+      ],
+      "name": "canScrew",
+      "affordsTask": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Screwing:screwBoltTask_1"
+      },
+      "isDescribedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Affordance:screwable"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Operator:emmanuel",
+      "type": [
+        "Operator",
+        "Agent"
+      ],
+      "name": "emmanuel"
+    },
+    {
+      "id": "urn:ngsi-ld:Screw:screw_1",
+      "type": [
+        "Screw",
+        "Object"
+      ],
+      "name": "screw_1"
+    },
+    {
+      "id": "urn:ngsi-ld:Screwdriver:screwdriver",
+      "type": [
+        "Screwdriver",
+        "Object"
+      ],
+      "name": "screwdriver",
+      "hasRole": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Screwer:screwingTool"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Screwer:screwingTool",
+      "type": [
+        "Screwer",
+        "Role"
+      ],
+      "name": "screwingTool"
+    },
+    {
+      "id": "urn:ngsi-ld:ExecutionStateRegion:executionStateActive",
+      "type": [
+        "ExecutionStateRegion"
+      ],
+      "name": "executionStateActive"
+    },
+    {
+      "id": "urn:ngsi-ld:ExecutionStateRegion:executionStatePending",
+      "type": [
+        "ExecutionStateRegion"
+      ],
+      "name": "executionStatePending"
+    },
+    {
+      "id": "urn:ngsi-ld:ExecutionStateRegion:executionStateCancelled",
+      "type": [
+        "ExecutionStateRegion"
+      ],
+      "name": "executionStateCancelled"
+    },
+    {
+      "id": "urn:ngsi-ld:ExecutionStateRegion:executionStateFailed",
+      "type": [
+        "ExecutionStateRegion"
+      ],
+      "name": "executionStateFailed"
+    },
+    {
+      "id": "urn:ngsi-ld:ExecutionStateRegion:executionStateSucceeded",
+      "type": [
+        "ExecutionStateRegion"
+      ],
+      "name": "executionStateSucceeded"
+    },
+    {
+      "id": "urn:ngsi-ld:ExecutionStateRegion:executionStatePaused",
+      "type": [
+        "ExecutionStateRegion"
+      ],
+      "name": "executionStatePaused"
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalObject:asssembledRotorStatorLidNut",
+      "type": [
+        "PhysicalObject",
+        "Object"
+      ],
+      "name": "asssembledRotorStatorLidNut",
+      "hasRole": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Patient:screwingBearer"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Patient:screwingBearer",
+      "type": [
+        "Role",
+        "Patient"
+      ],
+      "name": "screwingBearer"
+    },
+    {
+      "id": "urn:ngsi-ld:Grasper:graspingTool",
+      "type": [
+        "Grasper",
+        "Role"
+      ],
+      "name": "graspingTool"
+    },
+    {
+      "id": "urn:ngsi-ld:Affordance:screwable",
+      "type": [
+        "Description",
+        "Affordance"
+      ],
+      "name": "screwable",
+      "definesBearer": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Patient:screwingBearer"
+      },
+      "definesTrigger": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Grasper:graspingTool"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Affordance:graspable",
+      "type": [
+        "Description",
+        "Affordance"
+      ],
+      "name": "graspable",
+      "definesBearer": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Screwer:screwingTool"
+      },
+      "definesTrigger": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Grasper:graspingTool"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:HelicalMotion:helicalMotion",
+      "type": [
+        "HelicalMotion"
+      ],
+      "name": "helicalMotion",
+      "isMotionFor": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Screwing:screwBoltTask_1"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Screwing:screwBoltTask_1",
+      "type": [
+        "Entity",
+        "Screwing",
+        "Task"
+      ],
+      "name": "screwBoltTask_1",
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Ability:canScrew"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Positioning:positionNutTask_1"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:screwBoltAction_1"
+      },
+      "isLastSubtask": {
+        "type": "Property",
+        "value": true
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Workflow:screwingWorkflow",
+      "type": [
+        "Workflow"
+      ],
+      "name": "screwingWorkflow",
+      "hasStep": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:PhysicalTask:assemblyTask",
+          "urn:ngsi-ld:PhysicalTask:positioningRotor_SatorInCasingTask",
+          "urn:ngsi-ld:PhysicalTask:lidPositioningAndFixatingTask"
+        ]
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:assemblyTask",
+      "type": [
+        "Entity",
+        "PhysicalTask",
+        "Task"
+      ],
+      "name": "assemblyTask",
+      "hasPart": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Holding:holdingStatorTask",
+          "urn:ngsi-ld:Positioning:slotRotorTask",
+          "urn:ngsi-ld:Orienting:rotateRotorTask"
+        ]
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:positioningRotor_SatorInCasingTask",
+      "type": [
+        "Entity",
+        "PhysicalTask",
+        "Task"
+      ],
+      "name": "positioningRotor_SatorInCasingTask",
+      "hasPart": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Positioning:positioningCasingTask",
+          "urn:ngsi-ld:Positioning:positioningAssembledRotorStatorTask"
+        ]
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PhysicalTask:assemblyTask"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:lidPositioningAndFixatingTask",
+      "type": [
+        "Entity",
+        "PhysicalTask",
+        "Task"
+      ],
+      "name": "lidPositioningAndFixatingTask",
+      "hasPart": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Positioning:positionLidTask",
+          "urn:ngsi-ld:Positioning:positionNutTask_1",
+          "urn:ngsi-ld:Screwing:screwBoltTask_1"
+        ]
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PhysicalTask:positioningRotor_SatorInCasingTask"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Holding:holdingStatorTask",
+      "type": [
+        "Action",
+        "Entity",
+        "Holding",
+        "Task"
+      ],
+      "name": "holdingStatorTask",
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:holdStatorAction"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      },
+      "isFirstSubtask": {
+        "type": "Property",
+        "value": true
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Positioning:slotRotorTask",
+      "type": [
+        "Action",
+        "Positioning",
+        "Entity"
+      ],
+      "name": "slotRotorTask",
+      "hasPart": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:MentalTask:searchRotorTask",
+          "urn:ngsi-ld:PhysicalTask:takeRotorTask",
+          "urn:ngsi-ld:LookingFor:locateStatorTask",
+          "urn:ngsi-ld:PhysicalTask:moveRotorToStatorTask"
+        ]
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Holding:holdingStatorTask"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Orienting:rotateRotorTask",
+      "type": [
+        "Action",
+        "Orienting",
+        "Entity",
+        "Task"
+      ],
+      "name": "rotateRotorTask",
+      "hasPart": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:LookingFor:locateRotorStatorTask",
+          "urn:ngsi-ld:PhysicalTask:takeRotorStatorTask",
+          "urn:ngsi-ld:Perceiving:checkAlignmentTask",
+          "urn:ngsi-ld:PhysicalTask:rotatingRotorTask"
+        ]
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Positioning:slotRotorTask"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      },
+      "isLastSubtask": {
+        "type": "Property",
+        "value": true
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:holdStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "holdStatorAction",
+      "hasInput": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:DesignedComponent:stator"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Cobot:ur5",
+          "urn:ngsi-ld:Operator:emmanuel"
+        ]
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:DesignedComponent:stator",
+      "type": [
+        "DesignedComponent",
+        "Object"
+      ],
+      "name": "stator"
+    },
+    {
+      "id": "urn:ngsi-ld:MentalTask:searchRotorTask",
+      "type": [
+        "MentalTask",
+        "Entity",
+        "Task"
+      ],
+      "name": "searchRotorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Perceiving:visualPerceptionFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PerceptionAbility:visualPerception"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:searchRotorAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:takeRotorTask",
+      "type": [
+        "Entity",
+        "PhysicalTask",
+        "Task"
+      ],
+      "name": "takeRotorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionFunction:motorFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:MotorActionAbility:pickUpItem",
+          "urn:ngsi-ld:MotorActionAbility:moveArm"
+        ]
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MentalTask:searchRotorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:takeRotorAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:LookingFor:locateStatorTask",
+      "type": [
+        "LookingFor",
+        "Entity",
+        "Task"
+      ],
+      "name": "locateStatorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Perceiving:visualPerceptionFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PerceptionAbility:visualPerception"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PhysicalTask:takeRotorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:locateStatorAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:moveRotorToStatorTask",
+      "type": [
+        "Entity",
+        "PhysicalTask",
+        "Task"
+      ],
+      "name": "moveRotorToStatorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionFunction:motorFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionAbility:moveArm"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:LookingFor:locateStatorTask"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:searchRotorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "searchRotorAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PerceptionAbility:visualPerception",
+      "type": [
+        "PerceptionAbility",
+        "Ability"
+      ],
+      "name": "visualPerception"
+    },
+    {
+      "id": "urn:ngsi-ld:Perceiving:visualPerceptionFunction",
+      "type": [
+        "Perceiving",
+        "Function"
+      ],
+      "name": "visualPerceptionFunction"
+    },
+    {
+      "id": "urn:ngsi-ld:Action:takeRotorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "takeRotorAction",
+      "hasInput": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:DesignedComponent:rotor"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:MotorActionAbility:pickUpItem",
+      "type": [
+        "Ability",
+        "MotorActionAbility"
+      ],
+      "name": "pickUpItem"
+    },
+    {
+      "id": "urn:ngsi-ld:MotorActionAbility:moveArm",
+      "type": [
+        "Ability",
+        "MotorActionAbility"
+      ],
+      "name": "moveArm"
+    },
+    {
+      "id": "urn:ngsi-ld:MotorActionFunction:motorFunction",
+      "type": [
+        "Function",
+        "MotorActionFunction"
+      ],
+      "name": "motorFunction"
+    },
+    {
+      "id": "urn:ngsi-ld:DesignedComponent:rotor",
+      "type": [
+        "DesignedComponent",
+        "Object"
+      ],
+      "name": "rotor"
+    },
+    {
+      "id": "urn:ngsi-ld:Action:locateStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "locateStatorAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:moveRotorToStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "moveRotorToStatorAction",
+      "hasInput": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:DesignedComponent:rotor",
+          "urn:ngsi-ld:DesignedComponent:stator"
+        ]
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Operator:emmanuel"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:MentalTask:slotRotorIntoStatorTask",
+      "type": [
+        "MentalTask",
+        "Entity",
+        "Task"
+      ],
+      "name": "slotRotorIntoStatorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionFunction:motorFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionAbility:applyPressure"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PhysicalTask:moveRotorToStatorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:slotRotorIntoStatorAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:slotRotorIntoStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "slotRotorIntoStatorAction",
+      "hasInput": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PhysicalObject:rotorStator"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Operator:emmanuel"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:MotorActionAbility:applyPressure",
+      "type": [
+        "Ability",
+        "MotorActionAbility"
+      ],
+      "name": "applyPressure"
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalObject:rotorStator",
+      "type": [
+        "PhysicalObject",
+        "Object"
+      ],
+      "name": "rotorStator"
+    },
+    {
+      "id": "urn:ngsi-ld:LookingFor:locateRotorStatorTask",
+      "type": [
+        "LookingFor",
+        "Entity",
+        "Task"
+      ],
+      "name": "locateRotorStatorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Perceiving:visualPerceptionFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PerceptionAbility:visualPerception"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:locateRotorStatorAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:takeRotorStatorTask",
+      "type": [
+        "Entity",
+        "PhysicalTask",
+        "Task"
+      ],
+      "name": "takeRotorStatorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionFunction:motorFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:MotorActionAbility:takeItem",
+          "urn:ngsi-ld:MotorActionAbility:moveArm"
+        ]
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:LookingFor:locateRotorStatorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:takeRotorStatorAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Perceiving:checkAlignmentTask",
+      "type": [
+        "Perceiving",
+        "Entity",
+        "Task"
+      ],
+      "name": "checkAlignmentTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Perceiving:visualPerceptionFunction",
+          "urn:ngsi-ld:AttentionFunction:attention"
+        ]
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PerceptionAbility:visualPerception"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:PhysicalTask:takeRotorStatorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:checkAlignmentAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalTask:rotatingRotorTask",
+      "type": [
+        "Entity",
+        "PhysicalTask",
+        "Task"
+      ],
+      "name": "rotatingRotorTask",
+      "involvesFunction": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionFunction:motorFunction"
+      },
+      "requiresAbility": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:MotorActionAbility:moveArm"
+      },
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Perceiving:checkAlignmentTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:rotatingRotorAction"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:locateRotorStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "locateRotorStatorAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:takeRotorStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "takeRotorStatorAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:MotorActionAbility:takeItem",
+      "type": [
+        "Ability",
+        "MotorActionAbility"
+      ],
+      "name": "takeItem"
+    },
+    {
+      "id": "urn:ngsi-ld:Action:checkAlignmentAction",
+      "type": [
+        "Action"
+      ],
+      "name": "checkAlignmentAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:AttentionFunction:attention",
+      "type": [
+        "Function",
+        "AttentionFunction"
+      ],
+      "name": "attention"
+    },
+    {
+      "id": "urn:ngsi-ld:Action:rotatingRotorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "rotatingRotorAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PhysicalObject:asssembledRotorStator",
+      "type": [
+        "PhysicalObject"
+      ],
+      "name": "asssembledRotorStator"
+    },
+    {
+      "id": "urn:ngsi-ld:Positioning:positioningCasingTask",
+      "type": [
+        "Positioning",
+        "Entity",
+        "Task"
+      ],
+      "name": "positioningCasingTask",
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Orienting:rotateRotorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:positioningCasingAction"
+      },
+      "isFirstSubtask": {
+        "type": "Property",
+        "value": true
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Positioning:positioningAssembledRotorStatorTask",
+      "type": [
+        "Positioning",
+        "Entity",
+        "Task"
+      ],
+      "name": "positioningAssembledRotorStatorTask",
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Positioning:positioningCasingTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:positioningAssembledRotorStatorAction"
+      },
+      "isLastSubtask": {
+        "type": "Property",
+        "value": true
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:positioningCasingAction",
+      "type": [
+        "Action"
+      ],
+      "name": "positioningCasingAction",
+      "hasInput": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:DesignedContainer:casing"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Cobot:ur5",
+          "urn:ngsi-ld:Operator:emmanuel"
+        ]
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:DesignedContainer:casing",
+      "type": [
+        "DesignedContainer",
+        "Object"
+      ],
+      "name": "casing"
+    },
+    {
+      "id": "urn:ngsi-ld:Action:positioningAssembledRotorStatorAction",
+      "type": [
+        "Action"
+      ],
+      "name": "positioningAssembledRotorStatorAction",
+      "performedBy": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Cobot:ur5",
+          "urn:ngsi-ld:Operator:emmanuel"
+        ]
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Positioning:positionLidTask",
+      "type": [
+        "Positioning",
+        "Entity",
+        "Task"
+      ],
+      "name": "positionLidTask",
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Positioning:positioningAssembledRotorStatorTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:positionLidAction"
+      },
+      "isFirstSubtask": {
+        "type": "Property",
+        "value": true
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Positioning:positionNutTask_1",
+      "type": [
+        "Positioning",
+        "Entity",
+        "Task"
+      ],
+      "name": "positionNutTask_1",
+      "directlyFollows": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Positioning:positionLidTask"
+      },
+      "isExecutedIn": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Action:positionNutAction_1"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:DesignedComponent:lid",
+      "type": [
+        "DesignedComponent",
+        "Object"
+      ],
+      "name": "lid"
+    },
+    {
+      "id": "urn:ngsi-ld:Action:positionLidAction",
+      "type": [
+        "Action"
+      ],
+      "name": "positionLidAction",
+      "hasInput": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:DesignedComponent:lid"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:positionNutAction_1",
+      "type": [
+        "Action"
+      ],
+      "name": "positionNutAction_1",
+      "hasInput": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Screw:screw_1",
+          "urn:ngsi-ld:DesignedComponent:lid",
+          "urn:ngsi-ld:Screwdriver:screwdriver"
+        ]
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Cobot:ur5"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Action:screwBoltAction_1",
+      "type": [
+        "Action"
+      ],
+      "name": "screwBoltAction_1",
+      "hasInput": {
+        "type": "Relationship",
+        "object": [
+          "urn:ngsi-ld:Screw:screw_1",
+          "urn:ngsi-ld:DesignedComponent:lid",
+          "urn:ngsi-ld:Screwdriver:screwdriver"
+        ]
+      },
+      "hasExecutionState": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:ExecutionStateRegion:executionStateActive"
+      },
+      "performedBy": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:Operator:emmanuel"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:Thing:HasAbilityRule",
+      "type": [
+        "Thing"
+      ],
+      "name": "HasAbilityRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Thing:FollowsActionRule",
+      "type": [
+        "Thing"
+      ],
+      "name": "FollowsActionRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Thing:FollowsPartRule",
+      "type": [
+        "Thing"
+      ],
+      "name": "FollowsPartRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Thing:CanPerformRule",
+      "type": [
+        "Thing"
+      ],
+      "name": "CanPerformRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Thing:FallbackToCobot",
+      "type": [
+        "Thing"
+      ],
+      "name": "FallbackToCobot"
+    }
+  ],
+  "rules": [
+    {
+      "id": "urn:ngsi-ld:Rule:HasAbilityRule",
+      "type": "SWRLRule",
+      "value": "main_onto.HasAbilityRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Rule:FollowsActionRule",
+      "type": "SWRLRule",
+      "value": "main_onto.FollowsActionRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Rule:FollowsPartRule",
+      "type": "SWRLRule",
+      "value": "main_onto.FollowsPartRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Rule:CanPerformRule",
+      "type": "SWRLRule",
+      "value": "main_onto.CanPerformRule"
+    },
+    {
+      "id": "urn:ngsi-ld:Rule:FallbackToCobot",
+      "type": "SWRLRule",
+      "value": "main_onto.FallbackToCobot"
+    }
+  ]
+}

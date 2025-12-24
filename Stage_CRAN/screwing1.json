@@ -1,0 +1,66 @@
+{
+  "agents": [
+    {"name": "UR5", "class": "Cobot"}
+  ],
+  "objects": [
+    {"name": "Screw1", "class": "Screw","ObjectProperties": {"hasLocalization": "ScrewLocalization","isParticipantIn":["ScrewingTask","DetectScrewTask","GraspingScrewTask","PlaceScrewTask"] , "hasSpaceRegion":"ScrewPosition"}},
+    {"name": "ScrewLocalization", "class": "Localization"},
+    {"name": "Workpiece1", "class": "DesignedComponent","ObjectProperties": {"hasLocalization": "WorkpieceLocalization" ,"isParticipantIn":["ScrewingTask","DetectWorkpieceTask"],"hasRole":"Rotor_StatorAssembled"}},
+    {"name": "WorkpieceLocalization", "class": "Localization"},
+    {"name":"sensor_1","class":"Sensor","ObjectProperties":{"isPartOf":"UR5", "hasRole":"cobot_sensorRole","hasDisposition":"PerceivingAbility"}}
+  ],
+  "tools": [
+    {"name":"GraspingTool","class": "Grasper"},
+    {"name": "HandE_Gripper", "class": "Hand-E","ObjectProperties":{"hasDisposition":["graspability","screwability"],"hasRole": "GraspingTool"} },
+    {"name": "Screwdriver1", "class": ["Screwdriver","GrippedObject"], "ObjectProperties": {
+    "isParticipantIn": ["ScrewingTask", "DetectScrewdriverTask", "GraspScrewdriverTask"],
+    "hasQuality":"graspability",
+    "hasRole":"ScrewingTool"
+  }},
+    {"name": "ScrewingTool", "class": ["Screwer","SelectedObject"], "ObjectProperties": {
+    "isParticipantIn": ["ScrewingTask"]
+  }},
+  {"name":"cobot_sensorRole","class":"SensorRole"},
+  {"name":"Rotor_StatorAssembled","class":"Patient"}
+  ],
+  "dispositions": [
+    {"name":"graspability", "class":[ "Graspability","Capability"],"ObjectProperties":{"isDescribedBy":["Graspable"]}},
+    {"name":"Graspable","class":"Affordance","ObjectProperties":{"definesBearer":"ScrewingTool","definesTrigger":"GraspingTool"}
+  },
+  {"name":"Detectable","class":"Affordance","ObjectProperties":{"definesBearer":"ScrewingTool","definesTrigger":"cobot_sensorRole"}},
+  {"name":"PerceivingAbility","class":["PerceptionAbility","Capability"],"ObjectProperties":{"isDescribedBy":["Detectable"]}
+} ,{
+  "name":"Screwable","class":"Affordance","ObjectProperties":{"definesBearer":"Rotor_StatorAssembled","definesTrigger":"ScrewingTool"}
+} ,
+{"name":"screwability","class":"Screwability","ObjectProperties":{"isDescribedBy":["Screwable"],"affordsTask":["ScrewingTask"]}}
+  ],
+
+  "motions":[{"name":"helicalMotion","class":"HelicalMotion","ObjectProperties":{"isMotionFor":"ScrewingTask"},"DataProperties":{"hasDirection":"clockwise","hasPitch":0.4}}
+  ],
+  "actions": [
+    {"name": "DetectScrewAction", "class": "PhysicalAction", "executesTask": "DetectScrewTask", "hasParticipant": "UR5"},
+    {"name": "DetectWorkpieceAction", "class": "PhysicalAction", "executesTask": "DetectWorkpieceTask", "hasParticipant": "UR5"},
+    {"name": "DetectScrewdriverAction", "class": "PhysicalAction", "executesTask": "DetectScrewdriverTask", "hasParticipant": "UR5"},
+    {"name": "GraspScrewAction", "class": "PhysicalAction", "executesTask": "GraspScrewTask", "hasParticipant": "UR5"},
+    {"name": "PlaceScrewAction", "class": "PhysicalAction", "executesTask": "PlaceScrewTask", "hasParticipant": "UR5"},
+    
+    {"name": "GraspScrewdriverAction", "class": "PhysicalAction", "executesTask": "GraspScrewdriverTask", "hasParticipant": "UR5"},
+    {"name": "AlignScrewdriverAction", "class": "PhysicalAction", "executesTask": "AlignScrewdriverTask", "hasParticipant": "UR5"},
+    {"name": "ScrewingAction", "class": "PhysicalAction", "executesTask": "ScrewingTask", "hasParticipant": "UR5"}
+  ],
+  
+  "tasks": [
+    {"name": "ScrewingTask", "class": "Screwing","ObjectProperties":{"requiresAbility":"graspability"}},
+    {"name": "DetectScrewTask", "class": "CheckingObjectPresence", "isPartOf": "ScrewingTask"},
+    {"name": "DetectWorkpieceTask", "class": "CheckingObjectPresence", "isPartOf": "ScrewingTask"},
+    {"name": "DetectScrewdriverTask", "class": "CheckingObjectPresence", "isPartOf": "ScrewingTask"},
+    {"name": "GraspScrewTask", "class": "Grasping", "isPartOf": "ScrewingTask"},
+    {"name": "PlaceScrewTask", "class": "Placing", "isPartOf": "ScrewingTask"},
+    {"name": "GraspScrewdriverTask", "class": "Grasping", "isPartOf": "ScrewingTask"},
+    {"name": "AlignScrewdriverTask", "class": "Positioning", "isPartOf": "ScrewingTask","ObjectProperties": {"hasGoalLocalization": "ScrewLocalization"}}
+    
+  ],
+  "spaceRegions": [
+   {"name":"ScrewPosition","class":"SpaceRegion","DataProperties":{"hasPositionData":"x,y,z"}}
+  ]
+}

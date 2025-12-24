@@ -1,0 +1,235 @@
+store acs/fr_store:
+    chunk rotor_reached:
+        vis#piece_reached rotor_true
+
+    chunk stator_reached:
+        vis#piece_reached stator_true
+
+    chunk box_reached:
+        vis#piece_reached box_true
+    
+    chunk lid_reached:
+        vis#piece_reached lid_true
+
+    chunk nut_reached:
+        vis#piece_reached nut_true
+
+    chunk screw_reached:
+        vis#piece_reached screw_true
+
+    chunk motor_reached:
+        vis#piece_reached motor_true
+
+    chunk rotor_taken:
+        vis#piece_taken rotor_true
+
+    chunk stator_taken:
+        vis#piece_taken stator_true
+
+    chunk box_taken:
+        vis#piece_taken box_true
+
+    chunk lid_taken:
+        vis#piece_taken lid_true
+    
+    chunk nut_taken:
+        vis#piece_taken nut_true
+
+    chunk screw_taken:
+        vis#piece_taken screw_true
+    
+    chunk motor_taken:
+        vis#piece_taken motor_true
+
+    chunk rotor_placed:
+        vis#location rotor_true
+
+    chunk stator_placed:
+        vis#location stator_true
+
+    chunk box_placed:
+        vis#location box_true
+        
+    chunk lid_placed:
+        vis#location lid_true
+
+    chunk nut_placed:
+        vis#location nut_true
+
+    chunk screw_placed:
+        vis#location screw_true
+    
+    chunk motor_placed:
+        vis#location motor_true
+
+    chunk motor_assembled:
+        vis#assembled motor_true
+
+    chunk rotor_unreached:
+        vis#piece_reached rotor_false
+
+    chunk stator_unreached:
+        vis#piece_reached stator_false
+
+    chunk box_unreached:
+        vis#piece_reached box_false
+    
+    chunk lid_unreached:
+        vis#piece_reached lid_false
+
+    chunk nut_unreached:
+        vis#piece_reached nut_false
+
+    chunk screw_unreached:
+        vis#piece_reached screw_false
+
+    chunk motor_unreached:
+        vis#piece_reached motor_false
+
+    chunk rotor_untaken:
+        vis#piece_taken rotor_false
+
+    chunk stator_untaken:
+        vis#piece_taken stator_false
+
+    chunk box_untaken:
+        vis#piece_taken box_false
+
+    chunk lid_untaken:
+        vis#piece_taken lid_false
+    
+    chunk nut_untaken:
+        vis#piece_taken nut_false
+
+    chunk screw_untaken:
+        vis#piece_taken screw_false
+    
+    chunk motor_untaken:
+        vis#piece_taken motor_false
+
+    chunk rotor_unplaced:
+        vis#location rotor_false
+
+    chunk stator_unplaced:
+        vis#location stator_false
+
+    chunk box_unplaced:
+        vis#location box_false
+        
+    chunk lid_unplaced:
+        vis#location lid_false
+
+    chunk nut_unplaced:
+        vis#location nut_false
+
+    chunk screw_unplaced:
+        vis#location screw_false
+    
+    chunk motor_unplaced:
+        vis#location motor_false
+
+    chunk motor_unassembled:
+        vis#assembled motor_false
+
+    chunk set_goal_11:
+        mcs/goals#set-goal 1.1
+
+    chunk set_goal_12:
+        mcs/goals#set-goal 1.2
+
+    chunk set_goal_13:
+        mcs/goals#set-goal 1.3
+
+    chunk set_goal_21:
+        mcs/goals#set-goal 2.1
+
+    chunk set_goal_22:
+        mcs/goals#set-goal 2.2
+
+    chunk set_goal_31:
+        mcs/goals#set-goal 3.1
+
+    chunk set_goal_321:
+        mcs/goals#set-goal 3.2.1
+
+    chunk set_goal_322:
+        mcs/goals#set-goal 3.2.2
+
+    chunk set_goal_323:
+        mcs/goals#set-goal 3.2.3
+
+    chunk set_goal_331:
+        mcs/goals#set-goal 3.3.1
+
+    chunk set_goal_332:
+        mcs/goals#set-goal 3.3.2
+
+    chunk set_goal_333:
+        mcs/goals#set-goal 3.3.3
+
+    chunk eval_goal_pass:
+        mcs/goals#eval pass
+
+    chunk eval_goal_fail:
+        mcs/goals#eval fail
+
+    chunk action_wait:
+        mov#cmd-action wait
+
+    chunk action_grasp:
+        mov#cmd-action grasp
+
+    chunk action_ungrasp:
+        mov#cmd-action ungrasp
+
+    chunk action_rotate:
+        mov#cmd-action rotate
+
+    chunk system_initialised:
+        vis#intern_state initialised
+
+    chunk system_shutdown:
+        vis#intern_state shutdown
+
+    chunk null:
+        vis#null null
+
+
+    chunk goal_1:
+        mcs/sl#match-1 
+    
+    chunk goal_2:
+        mcs/sl#match-2 
+
+    chunk goal_3:
+        mcs/sl#match-3 
+
+    chunk goal_4:
+        mcs/sl#match-4 
+    
+    chunk goal_5:
+        mcs/sl#match-5 
+
+    chunk goal_6:
+        mcs/sl#match-6 
+
+    chunk goal_7:
+        mcs/sl#match-7 
+
+    chunk goal_8:
+        mcs/sl#match-8 
+
+    chunk goal_9:
+        mcs/sl#match-9 
+
+    chunk goal_10:
+        mcs/sl#match-11
+
+    chunk goal_11:
+        mcs/sl#match-12
+
+
+
+
+
+    

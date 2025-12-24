@@ -1,0 +1,160 @@
+{
+    "@context":{
+        "soma":"http://www.ease-crc.org/ont/SOMA.owl#",
+        "dul":"http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#",
+        "core":"https://www.ai4c2ps.eu/ontologies/2024/core#",
+        "cognition":"https://www.ai4c2ps.eu/ontologies/2024/CognitionOntology#",
+        "agent":"https://www.ai4c2ps.eu/ontologies/2024/SysAgentOnto#",
+        "sosa":"http://www.w3.org/ns/sosa#",
+        "ssn":"http://www.w3.org/ns/ssn#",
+
+        "hasLocalization":"soma:hasLocalization",
+        "isParticipantIn":"dul:isParticipantIn",
+        "hasSpaceRegion":"soma:hasSpaceRegion",
+        "hasRole":"dul:hasRole",
+        "isPartOf":"dul:isPartOf",
+        "hasDisposition":"soma:hasDisposition",
+        "hasDirection":"soma:hasDirection",
+        "hasPitch":"soma:hasPitch",
+        "hasQuality":"dul:hasQuality",
+        "executesTask":"dul:executesTask",
+        "hasParticipant":"dul:hasParticipant",
+        "requiresAbility":"agent:requiresAbility",
+        "isDescribedBy":"dul:isDescribedBy",
+        "affordsTask":"soma:affordsTask",
+        "definesBearer":"soma:definesBearer",
+        "definesTrigger":"soma:definesTrigger",
+        "isMotionFor":"soma:isMotionFor",
+        "hasGoalLocalization":"soma:hasGoalLocalization"
+        
+         
+    },
+    "@graph":[
+         {"@id":"core:UR5",
+         "@type":"core:Cobot",
+        "name":"UR5"
+        },
+        {
+            "@id":"core:screw",
+            "@type":"core:Screw",
+            "name":"screw"
+        },
+        {
+            "@id":"soma:Workpiece",
+            "@type":"soma:DesignedComponent",
+            "name":"Workpiece"
+
+        },
+        {
+          "@id":"sosa:sensor",
+          "@type":"sosa:Sensor",
+          "name":"sensor",
+
+          "hasRole":{"@id":"core:cobot_sensorRole"}
+        },
+
+        {
+            "@id":"core:GraspingTool",
+            "@type":"core:Grasper",
+            "name":"GraspingTool"
+        },
+        {
+            "@id":"core:HandE_Gripper",
+            "@type":"core:Hand-E",
+            "name":"HandE_Gripper",
+            "hasDisposition":[ {"@id":"soma:graspability"}, {"@id":"soma:screwability"}],
+            "hasRole":{"@id":"core:GraspingTool"}
+
+
+        },
+        {
+            "@id":"core:screwdriver",
+             "@type":"core:Screwdriver",
+             "name":"screwdriver",
+            "hasQuality":{"@id":"soma:graspability"},
+            "hasRole":{"@id":"core:ScrewingTool"}
+        },
+        {
+            "@id":"core:ScrewingTool",
+            "@type":"core:Screwer",
+            "name":"ScrewingTool"
+
+        },
+        {
+           "@id":"soma:cobot_sensorRole",
+            "@type":"soma:SensorRole",
+            "name":"cobot_sensorRole"
+        },
+        {
+            "@id":"soma:Rotor_StatorAssembled",
+            "@type":"soma:Patient",
+            "name":"Rotor_StatorAssembled"
+        },
+
+        {
+            "@id":"soma:graspability",
+            "@type":["soma:Capability", "soma:Graspability"],
+            "name":"graspability",
+            "isDescribedBy":{"@id":"soma:Graspable"}
+
+        },
+        {
+            "@id":"soma:Graspable",
+            "@type":"soma:Affordance",
+            "name":"Graspable",
+            "definesBearer":{"@id":"core:ScrewingTool"},
+            "definesTrigger":{"@id":"core:GraspingTool"}
+        },
+        {
+            "@id":"soma:Detectable",
+            "@type":"soma:Affordance",
+            "name":"Detectable",
+            "definesBearer":{"@id":"core:ScrewingTool"},
+            "definesTrigger":{"@id":"soma:cobot_sensorRole"}
+        },
+
+        {
+            "@id":"soma:PerceivingAbility",
+            "@type":["cognition:PerceptionAbility","soma:Capability"],
+            "name":"PerceivingAbility",
+            "isDescribedBy":{"@id":"soma:Detectable"}
+        },
+        {
+            "@id":"soma:Screwable",
+            "@type":"soma:Affordance",
+            "name":"Screwable",
+            "definesBearer":{"@id":"soma:Rotor_StatorAssembled"},
+            "definesTrigger":{"@id":"core:ScrewingTool"}
+        },
+        {
+            "@id":"soma:screwability",
+            "@type":"soma:Screwability",
+            "name":"screwability",
+            "isDescribedBy":{"@id":"soma:Screwable"},
+            "affordsTask":["core:ScrewingTask"]
+        },
+        {
+          "@id": "soma:helicalMotion",
+          "@type": "soma:HelicalMotion",
+          "name": "helicalMotion",
+          "isMotionFor": {"@id": "core:ScrewingTask"},
+          "hasDirection": "clockwise",
+          "hasPitch": 0.4
+        },
+
+        {
+          "@id": "core:DetectScrewAction",
+          "@type": "dul:PhysicalAction",
+          "executesTask": {"@id": "core:DetectScrewTask"},
+          "hasParticipant": {"@id": "core:UR5"}
+        },
+        {
+          "@id": "core:DetectWorkpieceAction",
+          "@type": "dul:PhysicalAction",
+          "executesTask": {"@id": "core:DetectWorkpieceTask"},
+          "hasParticipant": {"@id": "core:UR5"}
+        }
+      
+
+    ]
+}
